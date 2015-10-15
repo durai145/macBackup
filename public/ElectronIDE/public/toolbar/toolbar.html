@@ -1,0 +1,39 @@
+<button class='uk-button uk-button-primary'
+    ng-click='ctrl.save()'>Save <i class="fa fa-check"></i></button>
+
+<div class='uk-button-group'>
+    <button class='uk-button uk-button-primary'
+        ng-click='ctrl.compile()'>Check <i class="fa fa-check"></i></button>
+    <button class='uk-button uk-button-success'
+        ng-click='ctrl.run()'>Run <i class='fa fa-play'></i></button>
+</div>
+
+<span class='spacer'></span>
+
+
+
+<label>Serial Port</label>
+<select
+        ng-model='ctrl.selectedPort'
+        ng-options='p.comName for p in ctrl.ports'
+        ng-change='ctrl.portChanged()'
+        ></select>
+
+
+
+
+<label>Board</label>
+
+<select
+    ng-model='ctrl.selectedBoard'
+    ng-options='b.name for b in ctrl.boards'
+    ng-change='ctrl.choseBoard()'
+    ></select>
+
+<span class='spacer'></span>
+
+
+<button
+    ng-click='ctrl.openSettings()'
+    class='uk-button'
+    >Settings <i class='fa fa-gear'></i></button>

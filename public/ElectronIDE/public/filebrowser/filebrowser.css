@@ -1,0 +1,21 @@
+#filebrowser ul {
+    	list-style: none;
+}
+
+#filebrowser .tree {
+    padding:0.5em;
+    border: 0px solid red;
+    margin-top:0;
+}
+
+#filebrowser .tree-node-opened ul {
+    display: block;
+}
+
+#filebrowser .tree-node-closed ul {
+    display: none;
+}
+
+#filebrowser li.selected {
+    background-color: #cccccc;
+}

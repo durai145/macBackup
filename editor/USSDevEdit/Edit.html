@@ -1,0 +1,66 @@
+
+<link rel="stylesheet" href="//cdn.quilljs.com/0.19.10/quill.snow.css" />
+<script src="//cdn.quilljs.com/0.19.10/quill.min.js"></script>
+
+<script type="text/javascript">
+	
+	var Counter = function(quill, options) {
+  this.quill = quill;
+  this.options = options;
+  this.container = document.querySelector(options.container);
+  quill.on('text-change', this.update.bind(this));
+  this.update();  // Account for initial contents
+};
+
+Counter.prototype.calculate = function() {
+  var text = this.quill.getText();
+  if (this.options.unit === 'word') {
+    text = text.trim();
+    // Splitting empty text returns a non-empty array
+    return text.length > 0 ? text.split(/\s+/).length : 0;
+  } else {
+    return text.length;
+  }
+};
+
+Counter.prototype.update = function() {
+  var length = this.calculate();
+  var label = this.options.unit;
+  if (length !== 1) {
+    label += 's';
+  }
+  this.container.innerHTML = length + ' ' + label;
+}
+
+Quill.registerModule('counter', Counter);
+
+var quill = new Quill('#editor');
+var counter = quill.addModule('counter', {
+  container: '#counter',
+  unit: 'word'
+});
+</script>
+
+<style type="text/css">
+	body {
+  font-family: Helvetica, Arial, sans-serif;
+  font-size: 13px;
+  padding: 25px;
+}
+
+#editor {
+  border: 1px solid #ccc;
+}
+
+#counter {
+  border: 1px solid #ccc;
+  border-width: 0px 1px 1px 1px;
+  color: #aaa;
+  padding: 5px 15px;
+  text-align: right;
+}
+
+</style>
+
+<div id="editor"></div>
+<div id="counter"></div>

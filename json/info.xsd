@@ -1,0 +1,7 @@
+<schema name="info.xsd">
+	<continer name="personal"> 
+		<element name="name" datatype="string" > </element>
+		<element name="Age" > </element>
+		<element name="dob" > </element>	
+	</continer>
+</schema>

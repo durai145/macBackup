@@ -1,0 +1,36 @@
+/*#serial-console {
+    position: absolute;
+    top: 4.6rem;
+    left:0;
+    right:0;
+    background-color: #eee;
+    bottom: 0;
+}*/
+
+
+.serial-output {
+    background-color: #fff;
+    padding: 0.5em;
+    font-family: "Source Code Pro", monospace;
+    font-size: 90%;
+    overflow: scroll;
+}
+.serial-output .input {
+    text-align: right;
+    background-color: lightblue;
+    border-radius: 8px 8px 0px 8px;
+    padding: 0.5em;
+    margin-left: 2em;
+}
+
+.serial-output p {
+    margin: 0.5em;
+}
+
+.serial-output .output {
+    text-align: left;
+    background-color: white;
+    border-radius: 8px 8px 8px 0px;
+    padding: 0.5em;
+    margin-right: 1em;
+}

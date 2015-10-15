@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+ <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<link rel="stylesheet" href="open-sans.css" type="text/css" />
+	<link rel="stylesheet" href="theme.css" type="text/css" />
+	<link href="http://netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css" media="all" rel="stylesheet" type="text/css" />
+ 
+
+	<title>This is Demo</title>
+		<meta charset="UTF-8" />
+		<link rel="stylesheet" href="open-sans.css" type="text/css" />
+		<style>
+		body {
+			padding: 20px;
+			color: #222;
+			background: #fff;
+		}
+
+		span { display: block; }
+
+		.font-demo {
+			display: inline-block;
+			margin: 5px 0 20px;
+			padding: 10px;
+			border: 1px dotted #555;
+			font-family: 'Open Sans';
+			font-size: 24px;
+		}
+		</style>
+
+
+
+<head>
+	<body>
+
+<div class="container">
+	<div id="styleId"> style</div>
+</div>
+	<script type="text/javascript">
+	
+		alert("script");
+var  TheameJson=[
+ {
+ 	Fonts: [{
+ 		 "F1":"300"
+		,"F2":"Regular"
+		,"F3":"600"
+		,"F4":"Bold"}]
+	,Size: [{
+		 H1 : "30pt"
+		,H2 : "28pt"
+		,H3 : "26pt"
+		,H4 : "24pt"
+		,H5 : "22pt"
+		,H6 : "20pt"
+		,H7 : "18pt"
+		,H8 : "16pt"
+		,H9 : "14pt"
+		,H10: "12pt"
+		,H11: "10pt"
+		,H12: "8pt"	
+	}]
+	,Color: [{
+		 C1 : "#3b74b0"
+		,C2 : "#548fcd"
+		,C3 : "#4e9414"
+		,C4 : "#d3564d"
+		,C5 : "#548fcd"
+		,C6 : "#4c4e4a"
+		,C7 : "#212121"
+		,C8 : "#414141"
+		,C9 : "#515151"
+		,C10 : "#616161"
+		,C11 : "#919191"
+		,C12 : "#d5d5d5"
+		,C13 : "#ffffff"	
+	
+	}]
+	,BackColor: [{
+		 B1 : "#3b74b0"
+		,B2 : "#548fcd"
+		,B3 : "#4e9414"
+		,B4 : "#d3564d"
+		,B5 : "#548fcd"
+		,B6 : "#4c4e4a"
+		,B7 : "#212121"
+		,B8 : "#414141"
+		,B9 : "#515151"
+		,B10 : "#616161"
+		,B11 : "#919191"
+		,B12 : "#d5d5d5"
+		,B13 : "#ffffff"	
+	
+	}]
+
+}];
+
+var style=document.createElement("style");
+
+var ViewStyle=document.createElement("div");
+
+
+for(var i=0; i < TheameJson.length; i++)
+{
+	
+	
+	for( var s in  TheameJson[i].Size[0])
+	{
+		//for( var s in  TheameJson[i].Size[0])
+		for( var f in TheameJson[i].Fonts[0])
+		{
+				
+		
+			for( var b in TheameJson[i].BackColor[0] )
+
+			{	
+				var rowDiv=document.createElement("div");
+				rowDiv.className       = "row";
+				
+
+			for( var c in TheameJson[i].Color[0] )
+			{	
+
+				//alert("f" + f + "s" + s + "c" + c)
+
+				if( TheameJson[i].BackColor[0][b] != TheameJson[i].Color[0][c] )
+				{
+					dynamicStyle="\n ."+f+s+c+b+"    {"
+			
+				+  "font-family: 'Open Sans'  ; \n "
+				+  "font-weight: "+TheameJson[i].Fonts[0][f] +";\n"
+				+  "font-size  : "+TheameJson[i].Size[0][s]  +";\n"
+				+  "color      : "+TheameJson[i].Color[0][c] +";\n"
+				+  "background-color : "+TheameJson[i].BackColor[0][b] +";\n"
+				
+				+  "}\n     "
+				
+
+				var colDiv=document.createElement("div");
+				colDiv.className       = "col-sm-2";
+				var eleDiv=document.createElement("div");
+				eleDiv.className       = "font-demo " +f+s+c+b ;
+
+				var styleName=document.createTextNode(f+s+c+b );
+
+				eleDiv.appendChild(styleName);
+				colDiv.appendChild(eleDiv);
+				rowDiv.appendChild(colDiv);
+
+              var TextNode = document.createTextNode(dynamicStyle);
+
+					style.appendChild(TextNode);
+			
+
+				}
+				
+			}
+			ViewStyle.appendChild(rowDiv);
+		}	
+
+				
+		}	
+	}
+}
+
+document.getElementById("styleId").appendChild(style);
+document.getElementById("styleId").appendChild(ViewStyle);
+
+function ParseJson(json)
+{
+
+
+if( typeof json === "object" )
+{
+	if(json.length >0 )
+	{
+		ParseJson(json);
+	}
+
+}
+else
+{
+	for ( key  in TheameJson[i])
+	{
+		alert("key=" + key + ": " +  TheameJson[i])
+
+
+	}
+}
+
+
+
+}
+
+
+
+
+</script>
+	<div class="container">
+	<div class="row"><div class="col-sm-4">
+
+<div class="font-demo adminlogin" > 		adminlogin		</div>
+<div class="row"><div class="col-sm-4"><div class="font-demo adminScreenLabels" > adminScreenLabels	</div> </div></div></div>
+<div class="row"><div class="col-sm-4"><div class="font-demo adminloginButton" > adminloginButton	</div> </div></div></div>
+<div class="row"><div class="col-sm-4"><div class="font-demo adminScreenLinks" > adminScreenLinks	</div> </div></div></div>
+<div class="row"><div class="col-sm-4"><div class="font-demo labelCommon" > 		labelCommon 	</div> </div></div></div>
+<div class="row"><div class="col-sm-4"><div class="font-demo containerHead" > 	containerHead		</div> </div></div></div>
+<div class="row"><div class="col-sm-4"><div class="font-demo circleRed" > 	 		        		</div> </div></div></div>
+<div class="row"><div class="col-sm-4"><div class="font-demo circleBlue" > 				    		</div> </div></div></div>
+<div class="row"><div class="col-sm-4"><div class="font-demo circleGreen" > 						</div> </div></div></div>
+<div class="row"><div class="col-sm-4"><div class="font-demo circleOrange" > 						</div>
+</body>
+
+
+</html>

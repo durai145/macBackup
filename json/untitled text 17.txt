@@ -1,0 +1,587 @@
+
+ <!--###  #####in frameGeneration######-->
+ <!--###  rec     :[object Object]-->
+ <!--###  recSch  :[object Object]-->
+ <!--###  parent  :[object Object]-->
+ <!--###  level   :0-->
+ <!--###  recSch.length = 1-->
+ <!--###  rec.length    = 1-->
+ <!--### FG1.check parent.length == 0 , actual parent.length=<1>-->
+ <!--### FG1.2. else parent.length == 0 , actual parent.length=<1>-->
+ <!--### FG1.2.L#.M#.000 [L0.M1 ]: parent [0].dataType =  <PARENT>-->
+ <!--### FG1.2.L#.M#.001 check [L0.M1 ]: parent.datatype in ( 'SCHEMA','PARENT','XMLCONTAINER')-->
+ <!--### FG1.2.L#.M#.001.001 yes [L0.M1 ]: parent.datatype in ( 'SCHEMA','PARENT','XMLCONTAINER')-->
+ <!--### FG1.2.L#.M#.001.002 [L0.M1 ]:  check rec.length ==  0,actual rec.length <1>-->
+ <!--### FG1.2.L#.M#.001.002 [L0.M1 ]:  NO rec.length ==  0,actual rec.length <1>-->
+ <!--### FG1.2.L#.M#.001.003 check  [L0.M1 ]:  NO recSch.length ==  0,actual recSch.length <1>-->
+ <!--### FG1.2.L#.M#.001.003.002 NO   [L0.M1 ]:  NO recSch.length ==  0,actual recSch.length <1>-->
+ <!--### start container-->
+ USSAccordion0=new us.USSCreateAccordion(0) 
+ <!--### FG1.2.L#.M#.001.003.003  parent[0].dataType == 'XMLCONTAINER', actual  PARENT-->
+ <!--### recSch [0].dataType =  <SCHEMA>-->
+ USSAccordion0=us.USSAppendAccordionHeader(USSAccordion0 ,'Schema' ) 
+ <!--###  Call F:001: frameGeneration ..-->
+ <!--###  #####in frameGeneration######-->
+ <!--###  rec     :[object Object]-->
+ <!--###  recSch  :[object Object]-->
+ <!--###  parent  :[object Object]-->
+ <!--###  level   :1-->
+ <!--###  recSch.length = 1-->
+ <!--###  rec.length    = 1-->
+ <!--### FG1.check parent.length == 0 , actual parent.length=<1>-->
+ <!--### FG1.2. else parent.length == 0 , actual parent.length=<1>-->
+ <!--### FG1.2.L#.M#.000 [L0.M1 ]: parent [0].dataType =  <SCHEMA>-->
+ <!--### FG1.2.L#.M#.001 check [L0.M1 ]: parent.datatype in ( 'SCHEMA','PARENT','XMLCONTAINER')-->
+ <!--### FG1.2.L#.M#.001.001 yes [L0.M1 ]: parent.datatype in ( 'SCHEMA','PARENT','XMLCONTAINER')-->
+ <!--### FG1.2.L#.M#.001.002 [L0.M1 ]:  check rec.length ==  0,actual rec.length <1>-->
+ <!--### FG1.2.L#.M#.001.002 [L0.M1 ]:  NO rec.length ==  0,actual rec.length <1>-->
+ <!--### FG1.2.L#.M#.001.003 check  [L0.M1 ]:  NO recSch.length ==  0,actual recSch.length <1>-->
+ <!--### FG1.2.L#.M#.001.003.002 NO   [L0.M1 ]:  NO recSch.length ==  0,actual recSch.length <1>-->
+ <!--### start container-->
+ USSAccordion1=new us.USSCreateAccordion(1) 
+ <!--### FG1.2.L#.M#.001.003.003  parent[0].dataType == 'XMLCONTAINER', actual  SCHEMA-->
+ <!--### recSch [0].dataType =  <XMLCONTAINER>-->
+ USSAccordion1=us.USSAppendAccordionHeader(USSAccordion1 ,'personalInfo' ) 
+ <!--###  Call F:001: frameGeneration ..-->
+ <!--###  #####in frameGeneration######-->
+ <!--###  rec     :[object Object],[object Object],[object Object]-->
+ <!--###  recSch  :[object Object],[object Object],[object Object],[object Object],[object Object]-->
+ <!--###  parent  :[object Object]-->
+ <!--###  level   :2-->
+ <!--###  recSch.length = 5-->
+ <!--###  rec.length    = 3-->
+ <!--### FG1.check parent.length == 0 , actual parent.length=<1>-->
+ <!--### FG1.2. else parent.length == 0 , actual parent.length=<1>-->
+ <!--### FG1.2.L#.M#.000 [L0.M1 ]: parent [0].dataType =  <XMLCONTAINER>-->
+ <!--### FG1.2.L#.M#.001 check [L0.M1 ]: parent.datatype in ( 'SCHEMA','PARENT','XMLCONTAINER')-->
+ <!--### FG1.2.L#.M#.001.001 yes [L0.M1 ]: parent.datatype in ( 'SCHEMA','PARENT','XMLCONTAINER')-->
+ <!--### FG1.2.L#.M#.001.002 [L0.M1 ]:  check rec.length ==  0,actual rec.length <3>-->
+ <!--### FG1.2.L#.M#.001.002 [L0.M1 ]:  NO rec.length ==  0,actual rec.length <3>-->
+ <!--### FG1.2.L#.M#.001.003 check  [L0.M1 ]:  NO recSch.length ==  0,actual recSch.length <5>-->
+ <!--### FG1.2.L#.M#.001.003.002 NO   [L0.M1 ]:  NO recSch.length ==  0,actual recSch.length <5>-->
+ <!--### start container-->
+ USSAccordion2=new us.USSCreateAccordion(2) 
+ <!--### FG1.2.L#.M#.001.003.003  parent[0].dataType == 'XMLCONTAINER', actual  XMLCONTAINER-->
+  USSTable=new us.USSCreateTable_(); 
+ USSAccordion2=us.USSAppendAccordionHeader(USSAccordion2 ,'personalInfo' ) 
+ <!--### recSch [0].dataType =  <VARCHAR>-->
+ <!--###  A:001 : Call frameField ..-->
+ 
+ USSTableRow = us.USSCreateTableRow_();	
+ USSField    = new us.USSField_(); 
+ USSField.group='uss';
+ USSField.name='name';
+ USSField.label='name';
+ USSField.task='NONE';
+ USSField.desc='';
+ USSField.htmlType='VARCHAR';
+ USSField.entitle='READONLY';
+ USSField.enttlname='';
+ USSField.mndf='N';
+ USSField.dataType='VARCHAR';
+ USSField.cclass='ctable';
+ USSField.validate='';
+ USSField.dflt='';
+ USSField.min='0';
+ USSField.max='20';
+ USSField.tips='';
+ USSField.onkeyup='onKeyUp(this);';
+ USSField.onchange='onChange(this);';
+ USSField.onkeydown='onKeyDown(this);';
+ USSField.onkeypress='onKeyPress(this);';
+ USSField.onclick='onClick(this);';
+ USSField.listVal='||A|A-ADD|M|M-MODIFY|I|I-INQURY|C|C-CANCEL|V|V-VERIFY';
+ USSField.help='N';
+ USSField.helpLink='helpload';
+ USSField.xml='N';
+ USSField.Xpath='/';
+ USSTableRow=us.CreateField(USSField,USSTableRow);
+ USSTable=us.USSAppendTableRow(USSTableRow,USSTable); 
+ <!--### recSch [1].dataType =  <NUMBER>-->
+ <!--###  A:001 : Call frameField ..-->
+ 
+ USSTableRow = us.USSCreateTableRow_();	
+ USSField    = new us.USSField_(); 
+ USSField.group='uss';
+ USSField.name='Age';
+ USSField.label='Age';
+ USSField.task='NONE';
+ USSField.desc='';
+ USSField.htmlType='VARCHAR';
+ USSField.entitle='READONLY';
+ USSField.enttlname='';
+ USSField.mndf='N';
+ USSField.dataType='NUMBER';
+ USSField.cclass='ctable';
+ USSField.validate='';
+ USSField.dflt='';
+ USSField.min='1';
+ USSField.max='3';
+ USSField.tips='';
+ USSField.onkeyup='onKeyUp(this);';
+ USSField.onchange='onChange(this);';
+ USSField.onkeydown='onKeyDown(this);';
+ USSField.onkeypress='onKeyPress(this);';
+ USSField.onclick='onClick(this);';
+ USSField.listVal='||A|A-ADD|M|M-MODIFY|I|I-INQURY|C|C-CANCEL|V|V-VERIFY';
+ USSField.help='N';
+ USSField.helpLink='helpload';
+ USSField.xml='N';
+ USSField.Xpath='/';
+ USSTableRow=us.CreateField(USSField,USSTableRow);
+ USSTable=us.USSAppendTableRow(USSTableRow,USSTable); 
+ <!--### recSch [2].dataType =  <NUMBER>-->
+ <!--###  A:001 : Call frameField ..-->
+ 
+ USSTableRow = us.USSCreateTableRow_();	
+ USSField    = new us.USSField_(); 
+ USSField.group='uss';
+ USSField.name='Mobile';
+ USSField.label='MobileNo';
+ USSField.task='NONE';
+ USSField.desc='';
+ USSField.htmlType='VARCHAR';
+ USSField.entitle='READONLY';
+ USSField.enttlname='';
+ USSField.mndf='N';
+ USSField.dataType='NUMBER';
+ USSField.cclass='ctable';
+ USSField.validate='';
+ USSField.dflt='';
+ USSField.min='1';
+ USSField.max='3';
+ USSField.tips='';
+ USSField.onkeyup='onKeyUp(this);';
+ USSField.onchange='onChange(this);';
+ USSField.onkeydown='onKeyDown(this);';
+ USSField.onkeypress='onKeyPress(this);';
+ USSField.onclick='onClick(this);';
+ USSField.listVal='||A|A-ADD|M|M-MODIFY|I|I-INQURY|C|C-CANCEL|V|V-VERIFY';
+ USSField.help='N';
+ USSField.helpLink='helpload';
+ USSField.xml='N';
+ USSField.Xpath='/';
+ USSTableRow=us.CreateField(USSField,USSTableRow);
+ USSTable=us.USSAppendTableRow(USSTableRow,USSTable); 
+ <!--### recSch [3].dataType =  <DATE>-->
+ <!--###  A:001 : Call frameField ..-->
+ 
+ USSTableRow = us.USSCreateTableRow_();	
+ USSField    = new us.USSField_(); 
+ USSField.group='uss';
+ USSField.name='DOB';
+ USSField.label='Date of Birth';
+ USSField.task='NONE';
+ USSField.desc='';
+ USSField.htmlType='VARCHAR';
+ USSField.entitle='READONLY';
+ USSField.enttlname='';
+ USSField.mndf='N';
+ USSField.dataType='DATE';
+ USSField.cclass='ctable';
+ USSField.validate='';
+ USSField.dflt='';
+ USSField.min='0';
+ USSField.max='60';
+ USSField.tips='';
+ USSField.onkeyup='onKeyUp(this);';
+ USSField.onchange='onChange(this);';
+ USSField.onkeydown='onKeyDown(this);';
+ USSField.onkeypress='onKeyPress(this);';
+ USSField.onclick='onClick(this);';
+ USSField.listVal='||A|A-ADD|M|M-MODIFY|I|I-INQURY|C|C-CANCEL|V|V-VERIFY';
+ USSField.help='N';
+ USSField.helpLink='helpload';
+ USSField.xml='N';
+ USSField.Xpath='/';
+ USSTableRow=us.CreateField(USSField,USSTableRow);
+ USSTable=us.USSAppendTableRow(USSTableRow,USSTable); 
+ <!--### recSch [4].dataType =  <LIST>-->
+ <!--###  A:001 : Call frameField ..-->
+ 
+ USSTableRow = us.USSCreateTableRow_();	
+ USSField    = new us.USSField_(); 
+ USSField.group='uss';
+ USSField.name='FUNCTION';
+ USSField.label='FUNCTION';
+ USSField.task='NONE';
+ USSField.desc='';
+ USSField.htmlType='VARCHAR';
+ USSField.entitle='READONLY';
+ USSField.enttlname='';
+ USSField.mndf='N';
+ USSField.dataType='LIST';
+ USSField.cclass='ctable';
+ USSField.validate='';
+ USSField.dflt='';
+ USSField.min='0';
+ USSField.max='60';
+ USSField.tips='';
+ USSField.onkeyup='onKeyUp(this);';
+ USSField.onchange='onChange(this);';
+ USSField.onkeydown='onKeyDown(this);';
+ USSField.onkeypress='onKeyPress(this);';
+ USSField.onclick='onClick(this);';
+ USSField.listVal='||A|A-ADD|M|M-MODIFY|I|I-INQURY|C|C-CANCEL|V|V-VERIFY';
+ USSField.help='N';
+ USSField.helpLink='helpload';
+ USSField.xml='N';
+ USSField.Xpath='/';
+ USSTableRow=us.CreateField(USSField,USSTableRow);
+ USSTable=us.USSAppendTableRow(USSTableRow,USSTable); 
+ USSAccordion2=new us.USSAppendAccordionSection(USSAccordion2,USSTable ) ; 
+ <!--### end container-->
+ USSAccordion2=new us.USSAppendAccordionExapnd(USSAccordion2 ) ; 
+ <!--### FG1.2.L#.M#.001.003.003  parent[0].dataType == 'XMLCONTAINER', actual  XMLCONTAINER-->
+  USSTable=new us.USSCreateTable_(); 
+ USSAccordion2=us.USSAppendAccordionHeader(USSAccordion2 ,'personalInfo' ) 
+ <!--### recSch [0].dataType =  <VARCHAR>-->
+ <!--###  A:001 : Call frameField ..-->
+ 
+ USSTableRow = us.USSCreateTableRow_();	
+ USSField    = new us.USSField_(); 
+ USSField.group='uss';
+ USSField.name='name';
+ USSField.label='name';
+ USSField.task='NONE';
+ USSField.desc='';
+ USSField.htmlType='VARCHAR';
+ USSField.entitle='READONLY';
+ USSField.enttlname='';
+ USSField.mndf='N';
+ USSField.dataType='VARCHAR';
+ USSField.cclass='ctable';
+ USSField.validate='';
+ USSField.dflt='';
+ USSField.min='0';
+ USSField.max='20';
+ USSField.tips='';
+ USSField.onkeyup='onKeyUp(this);';
+ USSField.onchange='onChange(this);';
+ USSField.onkeydown='onKeyDown(this);';
+ USSField.onkeypress='onKeyPress(this);';
+ USSField.onclick='onClick(this);';
+ USSField.listVal='||A|A-ADD|M|M-MODIFY|I|I-INQURY|C|C-CANCEL|V|V-VERIFY';
+ USSField.help='N';
+ USSField.helpLink='helpload';
+ USSField.xml='N';
+ USSField.Xpath='/';
+ USSTableRow=us.CreateField(USSField,USSTableRow);
+ USSTable=us.USSAppendTableRow(USSTableRow,USSTable); 
+ <!--### recSch [1].dataType =  <NUMBER>-->
+ <!--###  A:001 : Call frameField ..-->
+ 
+ USSTableRow = us.USSCreateTableRow_();	
+ USSField    = new us.USSField_(); 
+ USSField.group='uss';
+ USSField.name='Age';
+ USSField.label='Age';
+ USSField.task='NONE';
+ USSField.desc='';
+ USSField.htmlType='VARCHAR';
+ USSField.entitle='READONLY';
+ USSField.enttlname='';
+ USSField.mndf='N';
+ USSField.dataType='NUMBER';
+ USSField.cclass='ctable';
+ USSField.validate='';
+ USSField.dflt='';
+ USSField.min='1';
+ USSField.max='3';
+ USSField.tips='';
+ USSField.onkeyup='onKeyUp(this);';
+ USSField.onchange='onChange(this);';
+ USSField.onkeydown='onKeyDown(this);';
+ USSField.onkeypress='onKeyPress(this);';
+ USSField.onclick='onClick(this);';
+ USSField.listVal='||A|A-ADD|M|M-MODIFY|I|I-INQURY|C|C-CANCEL|V|V-VERIFY';
+ USSField.help='N';
+ USSField.helpLink='helpload';
+ USSField.xml='N';
+ USSField.Xpath='/';
+ USSTableRow=us.CreateField(USSField,USSTableRow);
+ USSTable=us.USSAppendTableRow(USSTableRow,USSTable); 
+ <!--### recSch [2].dataType =  <NUMBER>-->
+ <!--###  A:001 : Call frameField ..-->
+ 
+ USSTableRow = us.USSCreateTableRow_();	
+ USSField    = new us.USSField_(); 
+ USSField.group='uss';
+ USSField.name='Mobile';
+ USSField.label='MobileNo';
+ USSField.task='NONE';
+ USSField.desc='';
+ USSField.htmlType='VARCHAR';
+ USSField.entitle='READONLY';
+ USSField.enttlname='';
+ USSField.mndf='N';
+ USSField.dataType='NUMBER';
+ USSField.cclass='ctable';
+ USSField.validate='';
+ USSField.dflt='';
+ USSField.min='1';
+ USSField.max='3';
+ USSField.tips='';
+ USSField.onkeyup='onKeyUp(this);';
+ USSField.onchange='onChange(this);';
+ USSField.onkeydown='onKeyDown(this);';
+ USSField.onkeypress='onKeyPress(this);';
+ USSField.onclick='onClick(this);';
+ USSField.listVal='||A|A-ADD|M|M-MODIFY|I|I-INQURY|C|C-CANCEL|V|V-VERIFY';
+ USSField.help='N';
+ USSField.helpLink='helpload';
+ USSField.xml='N';
+ USSField.Xpath='/';
+ USSTableRow=us.CreateField(USSField,USSTableRow);
+ USSTable=us.USSAppendTableRow(USSTableRow,USSTable); 
+ <!--### recSch [3].dataType =  <DATE>-->
+ <!--###  A:001 : Call frameField ..-->
+ 
+ USSTableRow = us.USSCreateTableRow_();	
+ USSField    = new us.USSField_(); 
+ USSField.group='uss';
+ USSField.name='DOB';
+ USSField.label='Date of Birth';
+ USSField.task='NONE';
+ USSField.desc='';
+ USSField.htmlType='VARCHAR';
+ USSField.entitle='READONLY';
+ USSField.enttlname='';
+ USSField.mndf='N';
+ USSField.dataType='DATE';
+ USSField.cclass='ctable';
+ USSField.validate='';
+ USSField.dflt='';
+ USSField.min='0';
+ USSField.max='60';
+ USSField.tips='';
+ USSField.onkeyup='onKeyUp(this);';
+ USSField.onchange='onChange(this);';
+ USSField.onkeydown='onKeyDown(this);';
+ USSField.onkeypress='onKeyPress(this);';
+ USSField.onclick='onClick(this);';
+ USSField.listVal='||A|A-ADD|M|M-MODIFY|I|I-INQURY|C|C-CANCEL|V|V-VERIFY';
+ USSField.help='N';
+ USSField.helpLink='helpload';
+ USSField.xml='N';
+ USSField.Xpath='/';
+ USSTableRow=us.CreateField(USSField,USSTableRow);
+ USSTable=us.USSAppendTableRow(USSTableRow,USSTable); 
+ <!--### recSch [4].dataType =  <LIST>-->
+ <!--###  A:001 : Call frameField ..-->
+ 
+ USSTableRow = us.USSCreateTableRow_();	
+ USSField    = new us.USSField_(); 
+ USSField.group='uss';
+ USSField.name='FUNCTION';
+ USSField.label='FUNCTION';
+ USSField.task='NONE';
+ USSField.desc='';
+ USSField.htmlType='VARCHAR';
+ USSField.entitle='READONLY';
+ USSField.enttlname='';
+ USSField.mndf='N';
+ USSField.dataType='LIST';
+ USSField.cclass='ctable';
+ USSField.validate='';
+ USSField.dflt='';
+ USSField.min='0';
+ USSField.max='60';
+ USSField.tips='';
+ USSField.onkeyup='onKeyUp(this);';
+ USSField.onchange='onChange(this);';
+ USSField.onkeydown='onKeyDown(this);';
+ USSField.onkeypress='onKeyPress(this);';
+ USSField.onclick='onClick(this);';
+ USSField.listVal='||A|A-ADD|M|M-MODIFY|I|I-INQURY|C|C-CANCEL|V|V-VERIFY';
+ USSField.help='N';
+ USSField.helpLink='helpload';
+ USSField.xml='N';
+ USSField.Xpath='/';
+ USSTableRow=us.CreateField(USSField,USSTableRow);
+ USSTable=us.USSAppendTableRow(USSTableRow,USSTable); 
+ USSAccordion2=new us.USSAppendAccordionSection(USSAccordion2,USSTable ) ; 
+ <!--### end container-->
+ USSAccordion2=new us.USSAppendAccordionExapnd(USSAccordion2 ) ; 
+ <!--### FG1.2.L#.M#.001.003.003  parent[0].dataType == 'XMLCONTAINER', actual  XMLCONTAINER-->
+  USSTable=new us.USSCreateTable_(); 
+ USSAccordion2=us.USSAppendAccordionHeader(USSAccordion2 ,'personalInfo' ) 
+ <!--### recSch [0].dataType =  <VARCHAR>-->
+ <!--###  A:001 : Call frameField ..-->
+ 
+ USSTableRow = us.USSCreateTableRow_();	
+ USSField    = new us.USSField_(); 
+ USSField.group='uss';
+ USSField.name='name';
+ USSField.label='name';
+ USSField.task='NONE';
+ USSField.desc='';
+ USSField.htmlType='VARCHAR';
+ USSField.entitle='READONLY';
+ USSField.enttlname='';
+ USSField.mndf='N';
+ USSField.dataType='VARCHAR';
+ USSField.cclass='ctable';
+ USSField.validate='';
+ USSField.dflt='';
+ USSField.min='0';
+ USSField.max='20';
+ USSField.tips='';
+ USSField.onkeyup='onKeyUp(this);';
+ USSField.onchange='onChange(this);';
+ USSField.onkeydown='onKeyDown(this);';
+ USSField.onkeypress='onKeyPress(this);';
+ USSField.onclick='onClick(this);';
+ USSField.listVal='||A|A-ADD|M|M-MODIFY|I|I-INQURY|C|C-CANCEL|V|V-VERIFY';
+ USSField.help='N';
+ USSField.helpLink='helpload';
+ USSField.xml='N';
+ USSField.Xpath='/';
+ USSTableRow=us.CreateField(USSField,USSTableRow);
+ USSTable=us.USSAppendTableRow(USSTableRow,USSTable); 
+ <!--### recSch [1].dataType =  <NUMBER>-->
+ <!--###  A:001 : Call frameField ..-->
+ 
+ USSTableRow = us.USSCreateTableRow_();	
+ USSField    = new us.USSField_(); 
+ USSField.group='uss';
+ USSField.name='Age';
+ USSField.label='Age';
+ USSField.task='NONE';
+ USSField.desc='';
+ USSField.htmlType='VARCHAR';
+ USSField.entitle='READONLY';
+ USSField.enttlname='';
+ USSField.mndf='N';
+ USSField.dataType='NUMBER';
+ USSField.cclass='ctable';
+ USSField.validate='';
+ USSField.dflt='';
+ USSField.min='1';
+ USSField.max='3';
+ USSField.tips='';
+ USSField.onkeyup='onKeyUp(this);';
+ USSField.onchange='onChange(this);';
+ USSField.onkeydown='onKeyDown(this);';
+ USSField.onkeypress='onKeyPress(this);';
+ USSField.onclick='onClick(this);';
+ USSField.listVal='||A|A-ADD|M|M-MODIFY|I|I-INQURY|C|C-CANCEL|V|V-VERIFY';
+ USSField.help='N';
+ USSField.helpLink='helpload';
+ USSField.xml='N';
+ USSField.Xpath='/';
+ USSTableRow=us.CreateField(USSField,USSTableRow);
+ USSTable=us.USSAppendTableRow(USSTableRow,USSTable); 
+ <!--### recSch [2].dataType =  <NUMBER>-->
+ <!--###  A:001 : Call frameField ..-->
+ 
+ USSTableRow = us.USSCreateTableRow_();	
+ USSField    = new us.USSField_(); 
+ USSField.group='uss';
+ USSField.name='Mobile';
+ USSField.label='MobileNo';
+ USSField.task='NONE';
+ USSField.desc='';
+ USSField.htmlType='VARCHAR';
+ USSField.entitle='READONLY';
+ USSField.enttlname='';
+ USSField.mndf='N';
+ USSField.dataType='NUMBER';
+ USSField.cclass='ctable';
+ USSField.validate='';
+ USSField.dflt='';
+ USSField.min='1';
+ USSField.max='3';
+ USSField.tips='';
+ USSField.onkeyup='onKeyUp(this);';
+ USSField.onchange='onChange(this);';
+ USSField.onkeydown='onKeyDown(this);';
+ USSField.onkeypress='onKeyPress(this);';
+ USSField.onclick='onClick(this);';
+ USSField.listVal='||A|A-ADD|M|M-MODIFY|I|I-INQURY|C|C-CANCEL|V|V-VERIFY';
+ USSField.help='N';
+ USSField.helpLink='helpload';
+ USSField.xml='N';
+ USSField.Xpath='/';
+ USSTableRow=us.CreateField(USSField,USSTableRow);
+ USSTable=us.USSAppendTableRow(USSTableRow,USSTable); 
+ <!--### recSch [3].dataType =  <DATE>-->
+ <!--###  A:001 : Call frameField ..-->
+ 
+ USSTableRow = us.USSCreateTableRow_();	
+ USSField    = new us.USSField_(); 
+ USSField.group='uss';
+ USSField.name='DOB';
+ USSField.label='Date of Birth';
+ USSField.task='NONE';
+ USSField.desc='';
+ USSField.htmlType='VARCHAR';
+ USSField.entitle='READONLY';
+ USSField.enttlname='';
+ USSField.mndf='N';
+ USSField.dataType='DATE';
+ USSField.cclass='ctable';
+ USSField.validate='';
+ USSField.dflt='';
+ USSField.min='0';
+ USSField.max='60';
+ USSField.tips='';
+ USSField.onkeyup='onKeyUp(this);';
+ USSField.onchange='onChange(this);';
+ USSField.onkeydown='onKeyDown(this);';
+ USSField.onkeypress='onKeyPress(this);';
+ USSField.onclick='onClick(this);';
+ USSField.listVal='||A|A-ADD|M|M-MODIFY|I|I-INQURY|C|C-CANCEL|V|V-VERIFY';
+ USSField.help='N';
+ USSField.helpLink='helpload';
+ USSField.xml='N';
+ USSField.Xpath='/';
+ USSTableRow=us.CreateField(USSField,USSTableRow);
+ USSTable=us.USSAppendTableRow(USSTableRow,USSTable); 
+ <!--### recSch [4].dataType =  <LIST>-->
+ <!--###  A:001 : Call frameField ..-->
+ 
+ USSTableRow = us.USSCreateTableRow_();	
+ USSField    = new us.USSField_(); 
+ USSField.group='uss';
+ USSField.name='FUNCTION';
+ USSField.label='FUNCTION';
+ USSField.task='NONE';
+ USSField.desc='';
+ USSField.htmlType='VARCHAR';
+ USSField.entitle='READONLY';
+ USSField.enttlname='';
+ USSField.mndf='N';
+ USSField.dataType='LIST';
+ USSField.cclass='ctable';
+ USSField.validate='';
+ USSField.dflt='';
+ USSField.min='0';
+ USSField.max='60';
+ USSField.tips='';
+ USSField.onkeyup='onKeyUp(this);';
+ USSField.onchange='onChange(this);';
+ USSField.onkeydown='onKeyDown(this);';
+ USSField.onkeypress='onKeyPress(this);';
+ USSField.onclick='onClick(this);';
+ USSField.listVal='||A|A-ADD|M|M-MODIFY|I|I-INQURY|C|C-CANCEL|V|V-VERIFY';
+ USSField.help='N';
+ USSField.helpLink='helpload';
+ USSField.xml='N';
+ USSField.Xpath='/';
+ USSTableRow=us.CreateField(USSField,USSTableRow);
+ USSTable=us.USSAppendTableRow(USSTableRow,USSTable); 
+ USSAccordion2=new us.USSAppendAccordionSection(USSAccordion2,USSTable ) ; 
+ <!--### end container-->
+ USSAccordion2=new us.USSAppendAccordionExapnd(USSAccordion2 ) ; 
+  
+ <!--###  Retuen F:002: frameGeneration ..-->
+ USSAccordion1=new us.USSAppendAccordionSection(USSAccordion1,USSTable ) ; 
+ <!--### end container-->
+ USSAccordion1=new us.USSAppendAccordionExapnd(USSAccordion1 ) ; 
+  
+ <!--###  Retuen F:002: frameGeneration ..-->
+ USSAccordion0=new us.USSAppendAccordionSection(USSAccordion0,USSAccordion1 ) ; 
+ <!--### end container-->
+ USSAccordion0=new us.USSAppendAccordionExapnd(USSAccordion0 ) ; var USSField=new us.USSField_();
+ document.getElementById('middleid').appendChild(USSAccordion0); 

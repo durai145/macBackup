@@ -1,0 +1,141 @@
+<html>
+	<head>
+		<style type="text/css">
+			.bcontainer {
+	FONT-WEIGHT: bold; 
+	FONT-SIZE: 14pt; 
+	COLOR: #caff70; 
+	FONT-STYLE: normal; 
+	FONT-FAMILY: arial, helvetica, sans-serif;
+	 BACKGROUND-COLOR: #4D7F17; 
+	 TEXT-ALIGN: center;
+	 
+	 padding: 4px 1px 1px 1px;
+	font-weight: bold;
+	 
+	border-bottom-right-radius: 5px;
+	border-bottom-left-radius: 5px;
+	border-top-right-radius: 5px;
+	border-top-left-radius: 5px;
+	border: 2px solid #b8b8b8;
+}
+
+
+.bsession{
+	FONT-WEIGHT: bold; 
+	FONT-SIZE: 14pt; 
+	COLOR: #104e8b; 
+	FONT-STYLE: normal; 
+	FONT-FAMILY: arial, helvetica, sans-serif;
+	 BACKGROUND-COLOR: #f4f4f4; 
+	 TEXT-ALIGN: left;
+	padding: 4px 1px 1px 1px; 
+	
+}
+
+.bcontainer: hover {
+	COLOR: #000000; 
+	background-color: yellow;
+} 
+
+.bcontainer a{
+	FONT-WEIGHT: bold;
+	COLOR: #caff70;
+}
+
+.bcontainer a:link {
+	FONT-WEIGHT: bold;
+	COLOR: #104e8b;
+}
+.bcontainer a:visited {
+	FONT-WEIGHT: bold; COLOR: #caff70;
+}
+.bcontainer a:active {
+	COLOR: #104e8b;
+}
+
+.word
+{
+  height: 15px;
+  width: 100px;
+  padding: 4px 1px 1px 1px;
+  font-weight: bold;
+ BACKGROUND-COLOR: #f4f4f4; 
+ relative : true;
+}
+
+		</style>
+		<script type="text/javascript">
+				var divCount=0;
+
+				var ussEditor = function(editorId)
+				{
+					this.editorId = "#"+editorId;
+					this.editorObj = document.querySelector( this.editorId)
+
+
+					return this;
+				}
+				function  reomveDiv(obj)
+				{
+					//alert(ussEditorObj.editorObj.value );
+					//ussEditorObj.editorObj.appendChild(obj.textContent);
+					ussEditorObj.editorObj.innerHTML+= "<div> " + obj.textContent + "</div>";
+
+					//alert("id" + obj.id);
+					var MeanID=document.getElementsByTagName('div');
+
+					for(var i=0; i<MeanID.length; i++)
+					{
+
+
+
+						if( MeanID.id == obj.id)
+						{
+							ussEditorObj.editorObj.removeChild(MeanID[i]);	
+						}
+					}
+
+					
+
+				}
+
+				function Add()
+				{
+					var divElement=document.createElement("div");
+					 divElement.setAttribute("display", true);
+					 divElement.setAttribute("class","word");
+					 divElement.textContent="div" + divCount++;
+					 divElement.id ="mean"
+					 divElement.setAttribute( "onclick", "reomveDiv(this)");
+					ussEditorObj.editorObj.appendChild(divElement);
+				}
+				
+
+
+		</script>
+
+	</head>
+
+
+<body>
+
+
+	<div id="editor" contentEditable="true">  test2
+		
+	</div>
+
+	<input type="button" value="button" onclick="javascript:Add()">
+
+	<script type="text/javascript">
+var ussEditorObj= ussEditor("editor");
+					 divElement=document.createElement("div");
+					 //divElement.setAttribute("contentEditable", true);
+					  divElement.setAttribute("display", true);
+					 divElement.textContent="test";
+					ussEditorObj.editorObj.appendChild(divElement);
+
+	</script>
+</body>
+
+</html>

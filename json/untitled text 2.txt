@@ -1,0 +1,17 @@
+<select name="RELIGION" id="RELIGION" size="1" style="width:288px;" class="paddl5" onchange="religion_resetRF();">
+<option value="0" selected="">Select Religion</option>
+<option value="1">Hindu</option><option value="10">Muslim - Shia</option>
+<option value="11">Muslim - Sunni</option><option value="2">Muslim - Others</option>
+<option value="12">Christian - Catholic</option>
+<option value="13">Christian - Orthodox</option>
+<option value="14">Christian - Protestant</option>
+<option value="3">Christian - Others</option>
+<option value="4">Sikh</option>
+<option value="15">Jain - Digambar</option>
+<option value="16">Jain - Shwetambar</option>
+<option value="5">Jain - Others</option>
+<option value="6">Parsi</option>
+<option value="7">Buddhist</option>
+<option value="8">Inter-Religion</option>
+<option value="9">No Religious Belief</option>
+</select>

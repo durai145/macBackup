@@ -1,0 +1,97 @@
+<html>
+
+<head>
+	<script>
+	
+	
+	function valWithSch(rec,recSch)
+	{
+		alert( recSch.Name);
+		alert( recSch.dataType);
+		
+		
+		if ( recSch.dataType != "CONTAINER" )
+		{
+				//alert( recSch.Name + "="+ eval('rec.'+recSch.Name) );
+				
+				value= eval('rec.'+recSch.Name);
+				
+				if (value === undefined) {
+				value='';
+				}
+		
+			if ( recSch.dataType == "DATE" )
+			{
+		
+				re = /^\d{1,2}\/\d{1,2}\/\d{4}$/;
+
+    			if(value != '' && !value.match(re)) {
+     			 alert("Invalid date format: " + value);
+      			 return false;
+    		}
+    		else if ( recSch.dataType == "DATE" )
+			{
+		
+
+    			// regular expression to match required time format
+    			re = /^\d{1,2}:\d{2}([ap]m)?$/;
+
+    			if(value != '' && !value.match(re)) {
+     			 alert("Invalid time format: " + value);
+     			 return false;
+    			}
+		
+			}
+			
+		}
+		
+		}
+		if ( recSch.childCount != 0 )
+		{
+		
+				for  ( var i=0; i <recSch.childs.length ; i++ )
+				{ 
+				valWithSch(eval( 'rec.' + recSch.Name ),recSch.childs[i]);
+				}
+		
+		
+			}
+	}
+
+	
+	
+			alert("import");
+			var PersonalInfo = { 
+									 ,personalInfo :[ {
+										Name: "Duraimurugan"
+										,Age  : 23
+										,DOB  : "01/01/2012"  
+										}
+										,
+										{
+										Name: "Agalya"
+										,Age  : 23
+										,DOB  : "01/01/2012"  
+										}
+										]
+					};
+			
+			var PersonalInfoSch = { 		Name     : "personalInfo"
+											,dataType : "CONTAINER"
+											,childs   :  [   { Name: "Name" , dataType: "VARCHAR" } 
+											              ,  { Name: "Age" , dataType: "NUMBER"  } 
+											              ,  { Name: "DOB" , dataType: "DATE"    } 
+											             ]
+						};
+							
+							
+			valWithSch(rec,recSch);							
+		
+			
+	</script>
+	</head>
+
+	<body>
+		
+	</body>
+	</html>

@@ -1,0 +1,57 @@
+,name      :fieldObj.name        
+,label     :fieldObj.label       
+,task      :fieldObj.task        
+,desc      :fieldObj.desc        
+,htmlType  :fieldObj.htmlType    
+,entitle   :fieldObj.entitle     
+,enttlname :fieldObj.enttlname   
+,mndf      :fieldObj.mndf        
+,dataType  :fieldObj.dataType    
+,cclass    :fieldObj.cclass      
+,parent    :fieldObj.parent      
+,validate  :fieldObj.validate    
+,dflt      :fieldObj.dflt        
+,min       :fieldObj.min         
+,max       :fieldObj.max         
+,tips      :fieldObj.tips        
+,onkeyup   :fieldObj.onkeyup     
+,onchange  :fieldObj.onchange    
+,onkeydown :fieldObj.onkeydown   
+,onkeypress:fieldObj.onkeypress  
+,onclick   :fieldObj.onclick     
+,listVal   :fieldObj.listVal     
+,help      :fieldObj.help        
+,helpLink  :fieldObj.helpLink    
+,xml       :fieldObj.xml         
+,xmlname   :fieldObj.xmlname 
+,Xpath     :fieldObj.Xpath 
+}
+
+
+'|' +fieldObj.name        
+'|' +fieldObj.label       
+'|' +fieldObj.task        
+'|' +fieldObj.desc        
+'|' +fieldObj.htmlType    
+'|' +fieldObj.entitle     
+'|' +fieldObj.enttlname   
+'|' +fieldObj.mndf        
+'|' +fieldObj.dataType    
+'|' +fieldObj.cclass      
+'|' +fieldObj.parent      
+'|' +fieldObj.validate    
+'|' +fieldObj.dflt        
+'|' +fieldObj.min         
+'|' +fieldObj.max         
+'|' +fieldObj.tips        
+'|' +fieldObj.onkeyup     
+'|' +fieldObj.onchange    
+'|' +fieldObj.onkeydown   
+'|' +fieldObj.onkeypress  
+'|' +fieldObj.onclick     
+'|' +fieldObj.listVal     
+'|' +fieldObj.help        
+'|' +fieldObj.helpLink    
+'|' +fieldObj.xml         
+xmlname   
+Xpath     

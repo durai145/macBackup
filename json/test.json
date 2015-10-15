@@ -1,0 +1,14 @@
+	var PersonalInfo =[ 
+			{
+			psnlInfo:[ 
+				{
+					BasicDet:[
+					{
+					name:"durai"
+					}
+					]
+			}
+				]
+								}
+					];
+			

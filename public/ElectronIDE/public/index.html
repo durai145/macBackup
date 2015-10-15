@@ -1,0 +1,534 @@
+<!DOCTYPE html>
+<html ng-app='app'>
+<head>
+    <title>Electron IDE</title>
+    <link rel="stylesheet" href="uikit/css/uikit.gradient.css" />
+
+    <script src="js/jquery.js"></script>
+    <script src="uikit/js/uikit.js"></script>
+</head>
+<body ng-controller='MainCtrl as ctrl'>
+
+<div class='vbox'>
+
+    <div id='toolbar' class='top toolbar uk-form' ng-include="'toolbar/toolbar.html'"></div>
+
+
+    <div class='middle grow'>
+        <div class='hbox'>
+
+            <div id='filebrowser' class='left' ng-class='ctrl.getCollapseClasses()'>
+                <div ng-include="'filebrowser/filebrowser.html'"></div>
+                <div class='divider divider-left'></div>
+            </div>
+
+            <div id='editor'      class='content grow'>
+                <div class='vbox panel'>
+                    <h3 class='fix'>{{ctrl.sketchName}}
+                        <button ng-click='ctrl.openLibrary()'
+                            class='uk-button uk-button-success uk-button-mini uk-float-right'> Library</button>
+                    </h3>
+                    <ul class='uk-tab fix'>
+                        <li ng-repeat='file in ctrl.files' ng-class='ctrl.getActive(file.filename)'>
+                            <a href='#' ng-click="ctrl.switchTab(file.filename)">{{file.filename}}</a>
+                        </li>
+                    </ul>
+                    <div id='ace-editor' class='grow'>some code to edit</div>
+                </div>
+            </div>
+
+            <div id='sidebar' class='right' ng-class='ctrl.getCollapseClasses()'>
+                <div class='vbox panel' ng-controller='SidebarCtrl as sb'>
+                    <h3 class='fix'>Tools</h3>
+                    <ul class='uk-tab fix'>
+                        <li class='uk-active'><a ng-click="sb.setTab('console')">Console</a></li>
+                        <li><a ng-click="sb.setTab('docs')">Docs</a></li>
+                        <li><a ng-click="sb.setTab('debug')">Debug</a></li>
+                    </ul>
+                    <div class='grow'>
+                        <div ng-show="sb.showConsole">
+                            <div ng-include="'serialconsole/serialconsole.html'"></div>
+                        </div>
+                        <div ng-show="sb.showDocs">
+                            <div ng-include="'docspanel/docspanel.html'"></div>
+                        </div>
+                        <div ng-show='sb.showDebug'>
+                            <div ng-include="'debugconsole/debugconsole.html'"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class='divider divider-right'></div>
+            </div>
+
+        </div>
+    </div>
+
+    <div id='footer' class='bottom toolbar fix'>
+        <button class='uk-button'
+            ng-click='ctrl.collapseLeft()'><i class='uk-icon-caret-left'></i> File Browser</button>
+        <span class='spacer'></span>
+        <label>{{ctrl.footerStatus}}</label>
+        <span class='spacer'></span>
+        <button class='uk-button'
+            ng-click='ctrl.collapseRight()'>Tools <i class='uk-icon-caret-right'></i></button>
+        <!--
+        <button ng-click='ctrl.openDebugConsole()' class='align-right'><i class='fa fa-toggle-up'></i></button>
+    -->
+    </div>
+
+
+
+</div>
+
+
+<div
+    ng-show='ctrl.debugVisible'
+    ng-include="'panels/debug_console.html'"
+    class='uk-modal'></div>
+
+<div id='settings'
+     class='uk-modal'
+     ng-include="'settings/settings.html'"></div>
+
+<div id="librarypicker"
+    ng-include="'librarypicker/librarypicker.html'"
+    class='uk-modal'></div>
+
+<div id='boardpicker'
+     class='uk-modal'
+     ng-include="'boardpicker/boardpicker.html'"></div>
+
+<div id='new-sketch-dialog'
+     class='uk-modal'
+     ng-include="'filebrowser/new-sketch-dialog.html'"></div>
+
+<div id='delete-sketch-dialog'
+     class='uk-modal'
+     ng-include="'filebrowser/delete-sketch-dialog.html'"></div>
+
+
+<script src='https://ajax.googleapis.com/ajax/libs/angularjs/1.2.19/angular.js'></script>
+<script src='./ace/src-noconflict/ace.js' type='text/javascript' charset='utf-8'></script>
+<script src="./ace/src-noconflict/ext-language_tools.js"></script>
+
+<link rel='stylesheet' href='serialconsole/serialconsole.css'>
+<script src='js/app.js'></script>
+<script src='js/Sketch.js'></script>
+<script src='js/Monitor.js'></script>
+<script src='AtomShell.js'></script>
+
+<link   href='filebrowser/filebrowser.css' rel='stylesheet' >
+<script  src='filebrowser/filebrowser.js'></script>
+<link   href='dividers/dividers.css' rel='stylesheet'>
+<script  src='dividers/dividers.js'></script>
+
+<link   href='librarypicker/librarypicker.css' rel='stylesheet'>
+
+<script type='text/javascript'>
+var editor;
+
+var editorInit = function() {
+    ace.require("ace/ext/language_tools");
+    editor = ace.edit('ace-editor');
+    editor.setOptions({
+        enableBasicAutocompletion: true
+    });
+
+    editor.getSession().setMode('ace/mode/c_cpp');
+    editor.setTheme('ace/theme/xcode');
+    editor.getSession().setUseWrapMode(true);
+
+};
+
+$(document).ready(editorInit);
+
+app
+    .controller('MainCtrl', ['Sketch','$http', 'Monitor', 'AtomShell', '$rootScope', '$scope',
+    function(Sketch,$http,Monitor, AtomShell, $rootScope, $scope) {
+        var self = this;
+        this.boardSearchVisible = false;
+        this.debugVisible = false;
+
+        this.files = [
+            { filename:'MySketch.ino',content: 'contents of file 1' },
+            { filename:'Api.h',       content: 'contents of file 2' },
+            { filename:'Api.cpp',     content: 'contents of file 3' },
+        ];
+        this.tab = 'MySketch.ino';
+
+        this.ports = [];
+        this.selectedPort = null;
+
+        this.boards = [
+            {id:'uno', name:'Uno', vendor:'Arduino CC'},
+            {id:'leonardo',name:'Leonardo', vendor:'Arduino CC'},
+            {id:'xadow',name:'Xadow', vendor: 'Seeedstudio LLC'},
+            {id:'@more',name:'More...', vendor: ''},
+        ];
+
+        this.selectedBoard = this.boards[0];
+        this.boardQuery = null;
+        this.boardResults = [];
+        this.boardResultsVisible = false;
+
+        this.searchBoard = function() {
+            var q = this.boardQuery.toLowerCase();
+            if(q.length < 2) return;
+            this.boardResultsVisible = true;
+            AtomShell.send('boards', null, function(data) {
+                self.boardResults = [];
+                data.forEach(function(board) {
+                    if(board.id.toLowerCase().indexOf(q) >= 0
+                     || board.name.toLowerCase().indexOf(q) >= 0)
+                     {
+                         self.boardResults.push(board);
+                     }
+                });
+            });
+        };
+        this.selectBoard = function(board) {
+            this.boards.push(board);
+            this.selectedBoard = board;
+        }
+
+        this.choseBoard = function() {
+            if(this.selectedBoard.id == '@more') {
+                $.UIkit.modal('#boardpicker').show();
+            }
+        }
+        this.closeBoardSearch = function() {
+            this.boardSearchVisible = false;
+        }
+
+        this.settings = {
+        }
+        this.openSettings = function() {
+            AtomShell.send("get_settings",{},function(res) {
+                self.settings = res;
+                $.UIkit.modal('#settings').show();
+            })
+        }
+        this.closeSettings = function(save) {
+            $.UIkit.modal('#settings').hide();
+            if(save) {
+                AtomShell.send('set_settings',self.settings,function(res) {
+                    $rootScope.$broadcast('newsketch',[res]);
+                });
+            }
+        }
+        this.openLibrary = function() {
+            $.UIkit.modal('#librarypicker').show();
+        }
+        this.closeLibrary = function() {
+            $.UIkit.modal('#librarypicker').hide();
+        }
+        this.openNewSketchDialog = function() {
+            $.UIkit.modal('#new-sketch-dialog').show();
+        }
+        this.cancelNewSketchDialog = function() {
+            $.UIkit.modal('#new-sketch-dialog').hide();
+        }
+        this.acceptNewSketchDialog = function() {
+            $.UIkit.modal('#new-sketch-dialog').hide();
+            console.log("going to create a new sketch with the name",this.newSketchName);
+            AtomShell.send('sketches_new',{name:this.newSketchName},function(res) {
+                console.log("the result is ",res);
+                $rootScope.$broadcast('newsketch',[res]);
+            });
+
+        }
+        this.openDeleteSketchDialog = function() {
+            $.UIkit.modal('#delete-sketch-dialog').show();
+        }
+        this.cancelDeleteSketchDialog = function() {
+            $.UIkit.modal('#delete-sketch-dialog').hide();
+        }
+        this.acceptDeleteSketchDialog = function() {
+            $.UIkit.modal('#delete-sketch-dialog').hide();
+            console.log("going to delete a new sketch with the name",this.selectedSketch.id);
+            AtomShell.send('sketches_delete',{name:this.selectedSketch.id},function(res) {
+                console.log("the result is ",res);
+                $rootScope.$broadcast('deletesketch',res);
+            });
+        }
+
+        $scope.$on('selectnode',function(event,node) {
+            console.log('selected a node',node);
+            self.selectedSketch = node;
+            self.selectedDir = node.id;
+            self.selectedFile = node.files[0].id;
+        })
+
+        this.openDebugConsole = function() {
+            self.debugVisible = true;
+        }
+        this.closeDebugConsole = function() {
+            self.debugVisible = false;
+        }
+        this.footerStatus = '';
+        this.compile = function() {
+            self.debugOutput = [];
+            Sketch.compile(this.selectedBoard, function(res) {
+                console.log('status = ',res);
+                if(res.status == 'okay') {
+                    self.footerStatus = '';
+                } else {
+                    self.footerStatus = res.status;
+                    if(res.message) {
+                        self.footerStatus = res.status + ' ' + res.message.output;
+                    }
+                }
+            });
+            this.footerStatus = 'Compiling...';
+        }
+        this.run = function() {
+            self.debugOutput = [];
+            this.footerStatus = 'Running...';
+            Sketch.run(this.selectedPort,this.selectedBoard, function(res) {
+                console.log('status = ',res);
+                if(res.status == 'okay') {
+                    self.footerStatus = '';
+                } else {
+                    self.footerStatus = res.status;
+                }
+            });
+        }
+        this.save = function() {
+            Sketch.saveSketch(self.selectedFile);
+        }
+
+
+        this.getActive = function(tab) {
+            return {
+                'uk-active': (tab==self.tab)
+            }
+        }
+        this.switchTab = function(tab) {
+            self.tab = tab;
+            this.files.forEach(function(file) {
+                if(file.filename == self.tab) {
+                    self.selectedFile = self.selectedDir+'/'+file.filename;
+                    editor.setValue(file.content);
+                    editor.clearSelection();
+                    editor.gotoLine(0);
+                }
+            });
+        }
+
+        this.searchResults = [];
+        this.searchQuery = null;
+        this.searchLibrary = function() {
+            var q = this.searchQuery.toLowerCase();
+            if(q.length < 2) return;
+            AtomShell.send('search',q, function(data) {
+                self.searchResults = data;
+            });
+        };
+
+        this.addLibrary = function(lib) {
+            editor.gotoLine(0);
+            editor.insert('#include <'+lib.name+'.h>\n');
+        }
+        function rescan() {
+            AtomShell.send('ports',null, function(data) {
+                console.log("got ports back");
+                console.log(data);
+                self.ports = data;
+                self.ports.unshift({
+                    comName:'None',
+                })
+                self.ports.push({
+                    comName:'Rescan',
+                });
+                self.selectedPort = self.ports[0];
+            });
+        }
+
+        rescan();
+
+        this.portChanged = function() {
+            if(self.selectedPort.comName == 'Rescan') {
+                rescan();
+            }
+        }
+
+        this.debugOutput = [];
+        this.sketchName = "No Sketch";
+
+        Monitor.on(function(e) {
+            console.log(e.type,e.message);
+            if(e.type == 'error') {
+                //self.footerStatus = 'Error:'+e.message;
+                self.debugOutput.push(e.message);
+            }
+
+            if(e.type == 'compile') {
+                self.debugOutput.push(e.message);
+            }
+
+        });
+
+
+        this.lcollapse = false;
+        this.rcollapse = false;
+        this.getCollapseClasses = function() {
+            return {
+                'left-collapse' : this.lcollapse,
+                'right-collapse': this.rcollapse
+            }
+        };
+        this.collapseLeft = function() {
+            this.lcollapse = !this.lcollapse;
+        }
+        this.collapseRight = function() {
+            this.rcollapse = !this.rcollapse;
+        }
+
+        var self = this;
+        Sketch.listeners.push(function() {
+            self.sketchName = Sketch.sketchName;
+            self.files = Sketch.files;
+            editor.setValue(self.files[0].content);
+            editor.clearSelection();
+            editor.gotoLine(0);
+        })
+        setupDividers();
+
+
+    }])
+
+
+    .controller('SidebarCtrl', ['$http', function($http){
+        this.tab = 'console';
+        this.showConsole    = true;
+        this.showDocs       = false;
+        this.showDebug      = false;
+        this.setTab = function(tab) {
+            console.log('swapping tabs',this.tab);
+            this.tab = tab;
+            this.showConsole = (this.tab == 'console');
+            this.showDocs = (this.tab == 'docs');
+            this.showDebug = (this.tab == 'debug');
+        }
+    }])
+
+    ;
+
+
+</script>
+<style>
+
+/* flex layouts */
+.vbox {
+    display: flex;
+    display: -webkit-flex;
+    flex-direction: column;
+    -webkit-flex-direction: column;
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+}
+.hbox {
+    display: flex;
+    display: -webkit-flex;
+    flex-direction: row;
+    -webkit-flex-direction: row;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+}
+
+.grow {
+    flex-grow: 1;
+    -webkit-flex-grow: 1;
+    position: relative;
+    border: 0px solid green;
+    overflow: scroll;
+}
+
+.fix {
+    flex-shrink: 0;
+    -webkit-flex-shrink: 0;
+}
+
+.top, .left, .bottom, .right {
+    position: relative;
+}
+.left, .right {
+    width: 300px;
+}
+
+.left.left-collapse, .right.right-collapse   { display: none; }
+
+
+
+/* panel content */
+
+.top, .left, .bottom, .right {
+    border: 1px solid #ddd;
+}
+.top    { border-width: 0px 0px 1px 0px; }
+.left   { border-width: 0px 1px 0px 0px; }
+.bottom { border-width: 1px 0px 0px 0px; }
+.right  { border-width: 0px 0px 0px 1px; }
+.toolbar {
+    display: flex;
+    display: -webkit-flex;
+    flex-direction: row;
+    -webkit-flex-direction: row;
+    padding: 0.2em;
+}
+.toolbar > * {
+    display: inline-block;
+    align-self: center;
+    margin: 0.4em 0.6em;
+}
+
+.toolbar > .spacer {
+    flex-grow: 1;
+    -webkit-flex-grow: 1;
+}
+
+.toolbar label {
+    font-weight: bold;
+    margin-right: 0em;
+}
+
+.panel h3 {
+    color: gray;
+    padding: 0.3em 0.5em;
+    text-transform: capitalize;
+    border: 1px solid lightgray;
+    border-width: 0px 0px 1px 0px;
+}
+
+/* tweaks */
+
+.uk-tab {
+    padding-left: 1em;
+}
+
+#ace-editor {
+    margin-top: 1px;
+    border: 1px solid darkgray;
+    border-width: 0px 0px 0px 0px;
+    font-family: "Source Code Pro", monospace;
+}
+
+#debugconsole {
+    margin:0;
+    padding:0.5em;
+}
+#debugconsole li {
+    word-wrap: break-word;
+    list-style: none;
+    margin:0;
+    padding:0;
+}
+
+</style>
+
+</body>
+</html>

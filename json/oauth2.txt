@@ -1,0 +1,56 @@
+var oauth2orize         = require('oauth2orize');
+var server = oauth2orize.createServer();
+var passport            = require('passport');
+
+
+exports.token = [
+    passport.authenticate(['basic', 'oauth2-client-password'], { session: false }),
+    server.token(),
+    server.errorHandler()
+];
+
+
+this._userProperty = 'user';
+
+  this.use(new SessionStrategy());
+  
+  
+  
+/**
+ * `Passport` constructor.
+ *
+ * @api public
+ */
+function Passport() {
+  this._key = 'passport';
+  this._strategies = {};
+  this._serializers = [];
+  this._deserializers = [];
+  this._infoTransformers = [];
+  this._framework = null;
+
+  this._userProperty = 'user';
+
+  this.use(new SessionStrategy());
+};
+
+
+Passport.prototype.use = function(name, strategy) {
+
+        console.log ( "###:Passport : prototype : use " );
+
+  if (!strategy) {
+    strategy = name;
+    name = strategy.name;
+  }
+  if (!name) throw new Error('authentication strategies must have a name');
+
+  this._strategies[name] = strategy;
+  return this;
+};
+
+if (!callback && typeof options === 'function') {
+    callback = options;
+    options = {};
+  }
+  

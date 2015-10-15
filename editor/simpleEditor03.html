@@ -1,0 +1,56 @@
+<head>
+    <script type="text/javascript">
+        function Init () {
+                // the 'multipleSelection' command throws an exception in Opera
+            try {
+                    // enables multiple selection in Internet Explorer
+                document.execCommand("multipleSelection", false, true);
+            }
+            catch (e) {};
+        }
+
+        function TestSelection () {         
+            if (document.selection === undefined || document.selection.type === undefined) {
+                alert ("Your browser does not support this example!");
+                return;
+            }
+
+            if (document.selection.type == "Control") {
+                var controlRange = document.selection.createRange ();
+                alert ("There are " + controlRange.length + " buttons selected.");
+
+                for (var i = 0; i < controlRange.length; i++) {
+                    var button = controlRange.item (i);
+                    alert ("The label of the " + (i+1) + ". selected button: " + button.value);
+                }
+            }
+            else {
+                alert ("Please select some of the buttons or maybe the selection cannot contain controls in your browser!");
+            }
+        }
+    </script>
+    <style>
+::-moz-selection { /* Code for Firefox */
+    color: red;
+    background: yellow;
+}
+
+::selection {
+    color: red;
+    background: yellow;
+}
+</style>
+</head>
+<body onload="Init ();">
+    Select some of the buttons in the field below and click on the 'Test Selection' button.<br />
+    You can select a button by clicking on it.<br />
+    Hold down the CTRL or SHIFT key for multiple selection.
+    <br /><br />
+    <div contenteditable="true" style="background-color:#a0e0e0;">
+        <button>First button</button><br />
+        <button>Second button</button><br />
+        <button>Third button</button>
+    </div>
+    <br /><br />
+    <button onclick="TestSelection ();">Test selection</button>
+</body>

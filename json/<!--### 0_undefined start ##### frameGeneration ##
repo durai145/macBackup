@@ -1,0 +1,260 @@
+<!--### 0_undefined start ##### frameGeneration ###### --> 
+ <!---
+schema_13.html:500 [Object, Object]
+schema_13.html:501 [Object, Object]
+schema_13.html:502 Object {name: "Dashboard", label: "name", task: "NONE", desc: "", htmlType: "PARENT"…}
+schema_13.html:503 0
+ [Object, Object]
+ [Object, Object]
+ --->
+ <!--###  check schema in 'PARENT' , 'COLLECTION' , 'SCHEMA' --> 
+ <!--### FG1.check parent.length == 0 , actual parent.name=<Dashboard>--> 
+ <!--### parent datatype is container--> 
+  USSAccordion0=new us.USSCreateAccordion(0) 
+  USSTable=new us.USSCreateTable_(); 
+  USSAccordion0=us.USSAppendAccordionHeader(USSAccordion0 ,'Dashboard' ) 
+  USSAppendAccordionDflt0=new us.USSAccordionCreateDflt(0); 
+  USSAppendAccordionDflt0=new us.USSAppendAccordionHeader(USSAppendAccordionDflt0,'Dashboard'); 
+ <!--###  evalStr =[rec[0].PersonalInfo]--> 
+ <!--
+schema_13.html:534 [Object, Object, Object, Object, Object]
+schema_13.html:535 -->
+ <!--### --> 
+   USSTable=new us.USSCreateTable_(); 
+  USSAppendAccordionDflt0=new us.USSAccordionCreateDflt(0); 
+  USSAppendAccordionDflt0=new us.USSAppendAccordionHeader(USSAppendAccordionDflt0,'Dashboard_rec_0',0,'0_0 '); 
+ <!--###  Call F:001: frameGeneration ..--> 
+ <!--### 1_0 start ##### frameGeneration ###### --> 
+s <!---
+schema_13.html:500 [Object, Object, Object, Object, Object]
+schema_13.html:501 [Object, Object, Object]
+schema_13.html:502 Object {name: "PersonalInfo", label: "PersonalInfo", group: "uss", task: "NONE", desc: ""…}
+schema_13.html:503 1
+ [Object, Object, Object]
+ [Object, Object, Object, Object, Object]
+ --->
+ <!--###  check schema in 'PARENT' , 'COLLECTION' , 'SCHEMA' --> 
+ <!--### FG1.check parent.length == 0 , actual parent.name=<PersonalInfo>--> 
+ <!--### parent datatype is container--> 
+  USSAccordion1=new us.USSCreateAccordion(1) 
+  USSTable=new us.USSCreateTable_(); 
+  USSAccordion1=us.USSAppendAccordionHeader(USSAccordion1 ,'PersonalInfo' ) 
+  USSAppendAccordionDflt1=new us.USSAccordionCreateDflt(1); 
+  USSAppendAccordionDflt1=new us.USSAppendAccordionHeader(USSAppendAccordionDflt1,'PersonalInfo'); 
+ <!--###  evalStr =[rec[0].name]--> 
+ <!--
+schema_13.html:534 PI01
+schema_13.html:535 -->
+  
+ USSTableRow = us.USSCreateTableRow_();	
+ USSField    = new us.USSField_(); 
+ USSField.group='uss';
+ USSField.name='undefined_name_1_0';
+ USSField.label='name';
+ USSField.task='NONE';
+ USSField.desc='';
+ USSField.htmlType='VARCHAR';
+ // func =Y >
+ USSField.entitle='NONREADONLY';
+ USSField.enttlname='';
+ USSField.mndf='N';
+ USSField.dataType='VARCHAR';
+ USSField.cclass='ctable';
+ USSField.validate='';
+ USSField.dflt='PI01';
+ USSField.min='0';
+ USSField.max='20';
+ USSField.tips='';
+ USSField.onkeyup='onKeyUp(this);';
+ USSField.onchange='onChange(this);';
+ USSField.onkeydown='onKeyDown(this);';
+ USSField.onkeypress='onKeyPress(this);';
+ USSField.onclick='onClick(this);';
+ USSField.listVal='||A|A-ADD|M|M-MODIFY|I|I-INQURY|C|C-CANCEL|V|V-VERIFY';
+ USSField.help='N';
+ USSField.helpLink='helpload';
+ USSField.xml='N';
+ USSField.Xpath='/';
+ USSTableRow=us.CreateField(USSField,USSTableRow);
+ USSTable=us.USSAppendTableRow(USSTableRow,USSTable); 
+ <!--###  evalStr =[rec[1].Age]--> 
+ <!--
+schema_13.html:534 23
+schema_13.html:535 -->
+  
+ USSTableRow = us.USSCreateTableRow_();	
+ USSField    = new us.USSField_(); 
+ USSField.group='uss';
+ USSField.name='undefined_Age_1_1';
+ USSField.label='Age';
+ USSField.task='NONE';
+ USSField.desc='';
+ USSField.htmlType='VARCHAR';
+ // func =Y >
+ USSField.entitle='NONREADONLY';
+ USSField.enttlname='';
+ USSField.mndf='N';
+ USSField.dataType='NUMBER';
+ USSField.cclass='ctable';
+ USSField.validate='';
+ USSField.dflt='23';
+ USSField.min='1';
+ USSField.max='3';
+ USSField.tips='';
+ USSField.onkeyup='onKeyUp(this);';
+ USSField.onchange='onChange(this);';
+ USSField.onkeydown='onKeyDown(this);';
+ USSField.onkeypress='onKeyPress(this);';
+ USSField.onclick='onClick(this);';
+ USSField.listVal='||A|A-ADD|M|M-MODIFY|I|I-INQURY|C|C-CANCEL|V|V-VERIFY';
+ USSField.help='N';
+ USSField.helpLink='helpload';
+ USSField.xml='N';
+ USSField.Xpath='/';
+ USSTableRow=us.CreateField(USSField,USSTableRow);
+ USSTable=us.USSAppendTableRow(USSTableRow,USSTable); 
+ <!--###  evalStr =[rec[2].Mobile]--> 
+ <!--
+schema_13.html:534 8134662646
+schema_13.html:535 -->
+  
+ USSTableRow = us.USSCreateTableRow_();	
+ USSField    = new us.USSField_(); 
+ USSField.group='uss';
+ USSField.name='undefined_Mobile_1_2';
+ USSField.label='MobileNo';
+ USSField.task='NONE';
+ USSField.desc='';
+ USSField.htmlType='VARCHAR';
+ // func =Y >
+ USSField.entitle='NONREADONLY';
+ USSField.enttlname='';
+ USSField.mndf='N';
+ USSField.dataType='NUMBER';
+ USSField.cclass='ctable';
+ USSField.validate='';
+ USSField.dflt='8134662646';
+ USSField.min='1';
+ USSField.max='3';
+ USSField.tips='';
+ USSField.onkeyup='onKeyUp(this);';
+ USSField.onchange='onChange(this);';
+ USSField.onkeydown='onKeyDown(this);';
+ USSField.onkeypress='onKeyPress(this);';
+ USSField.onclick='onClick(this);';
+ USSField.listVal='||A|A-ADD|M|M-MODIFY|I|I-INQURY|C|C-CANCEL|V|V-VERIFY';
+ USSField.help='N';
+ USSField.helpLink='helpload';
+ USSField.xml='N';
+ USSField.Xpath='/';
+ USSTableRow=us.CreateField(USSField,USSTableRow);
+ USSTable=us.USSAppendTableRow(USSTableRow,USSTable); 
+  USSAccordion1=new us.USSAppendAccordionDflt(USSAccordion1,USSAppendAccordionDflt1 ) ; 
+ <!--### 1_0 end ##### frameGeneration ###### --> 
+  
+ USSAccordion1=new us.USSCreateAccordion(1) 
+ USSTable=new us.USSCreateTable_(); 
+ USSAccordion1=us.USSAppendAccordionHeader(USSAccordion1 ,'PersonalInfo' ) 
+ USSAppendAccordionDflt1=new us.USSAccordionCreateDflt(1); 
+ USSAppendAccordionDflt1=new us.USSAppendAccordionHeader(USSAppendAccordionDflt1,'PersonalInfo'); 
+ 
+ USSTableRow = us.USSCreateTableRow_();	
+ USSField    = new us.USSField_(); 
+ USSField.group='uss';
+ USSField.name='undefined_name_1_0';
+ USSField.label='name';
+ USSField.task='NONE';
+ USSField.desc='';
+ USSField.htmlType='VARCHAR';
+ // func =Y >
+ USSField.entitle='NONREADONLY';
+ USSField.enttlname='';
+ USSField.mndf='N';
+ USSField.dataType='VARCHAR';
+ USSField.cclass='ctable';
+ USSField.validate='';
+ USSField.dflt='PI01';
+ USSField.min='0';
+ USSField.max='20';
+ USSField.tips='';
+ USSField.onkeyup='onKeyUp(this);';
+ USSField.onchange='onChange(this);';
+ USSField.onkeydown='onKeyDown(this);';
+ USSField.onkeypress='onKeyPress(this);';
+ USSField.onclick='onClick(this);';
+ USSField.listVal='||A|A-ADD|M|M-MODIFY|I|I-INQURY|C|C-CANCEL|V|V-VERIFY';
+ USSField.help='N';
+ USSField.helpLink='helpload';
+ USSField.xml='N';
+ USSField.Xpath='/';
+ USSTableRow=us.CreateField(USSField,USSTableRow);
+ USSTable=us.USSAppendTableRow(USSTableRow,USSTable); 
+ 
+ USSTableRow = us.USSCreateTableRow_();	
+ USSField    = new us.USSField_(); 
+ USSField.group='uss';
+ USSField.name='undefined_Age_1_1';
+ USSField.label='Age';
+ USSField.task='NONE';
+ USSField.desc='';
+ USSField.htmlType='VARCHAR';
+ // func =Y >
+ USSField.entitle='NONREADONLY';
+ USSField.enttlname='';
+ USSField.mndf='N';
+ USSField.dataType='NUMBER';
+ USSField.cclass='ctable';
+ USSField.validate='';
+ USSField.dflt='23';
+ USSField.min='1';
+ USSField.max='3';
+ USSField.tips='';
+ USSField.onkeyup='onKeyUp(this);';
+ USSField.onchange='onChange(this);';
+ USSField.onkeydown='onKeyDown(this);';
+ USSField.onkeypress='onKeyPress(this);';
+ USSField.onclick='onClick(this);';
+ USSField.listVal='||A|A-ADD|M|M-MODIFY|I|I-INQURY|C|C-CANCEL|V|V-VERIFY';
+ USSField.help='N';
+ USSField.helpLink='helpload';
+ USSField.xml='N';
+ USSField.Xpath='/';
+ USSTableRow=us.CreateField(USSField,USSTableRow);
+ USSTable=us.USSAppendTableRow(USSTableRow,USSTable); 
+ 
+ USSTableRow = us.USSCreateTableRow_();	
+ USSField    = new us.USSField_(); 
+ USSField.group='uss';
+ USSField.name='undefined_Mobile_1_2';
+ USSField.label='MobileNo';
+ USSField.task='NONE';
+ USSField.desc='';
+ USSField.htmlType='VARCHAR';
+ // func =Y >
+ USSField.entitle='NONREADONLY';
+ USSField.enttlname='';
+ USSField.mndf='N';
+ USSField.dataType='NUMBER';
+ USSField.cclass='ctable';
+ USSField.validate='';
+ USSField.dflt='8134662646';
+ USSField.min='1';
+ USSField.max='3';
+ USSField.tips='';
+ USSField.onkeyup='onKeyUp(this);';
+ USSField.onchange='onChange(this);';
+ USSField.onkeydown='onKeyDown(this);';
+ USSField.onkeypress='onKeyPress(this);';
+ USSField.onclick='onClick(this);';
+ USSField.listVal='||A|A-ADD|M|M-MODIFY|I|I-INQURY|C|C-CANCEL|V|V-VERIFY';
+ USSField.help='N';
+ USSField.helpLink='helpload';
+ USSField.xml='N';
+ USSField.Xpath='/';
+ USSTableRow=us.CreateField(USSField,USSTableRow);
+ USSTable=us.USSAppendTableRow(USSTableRow,USSTable); 
+ USSAccordion1=new us.USSAppendAccordionDflt(USSAccordion1,USSAppendAccordionDflt1 ) ;  
+ <!--###  End  F:001: frameGeneration ..--> 
+  USSAppendAccordionDflt0=new us.USSAppendAccordionSection(USSAppendAccordionDflt0,USSTable,0,'0_0' ) ; 
+  USSAccordion0=new us.USSAppendAccordionDflt(USSAccordion0,USSAppendAccordionDflt0 ) ; 
+ <!--### 0_undefined end ##### frameGeneration ###### --> 

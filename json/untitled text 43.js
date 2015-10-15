@@ -1,0 +1,262 @@
+!--###  #####in frameGeneration######--> 
+schema_13.html:428 <!--###  rec     :[object Object]--> 
+schema_13.html:428 <!--###  recSch  :[object Object]--> 
+schema_13.html:428 <!--###  parent  :[object Object]--> 
+schema_13.html:428 <!--###  level   :0--> 
+schema_13.html:428 <!--###  recSch.length = 1--> 
+schema_13.html:428 <!--###  rec.length    = 1--> 
+schema_13.html:428 <!--###  check schema in 'PARENT' , 'XMLCONTAINER' , 'SCHEMA' --> 
+schema_13.html:428 <!--### FG1.check parent.length == 0 , actual parent.length=<1>--> 
+schema_13.html:428 <!--### FG1.2. else parent.length == 0 , actual parent.length=<1>--> 
+schema_13.html:428 <!--### FG1.2.L#.M#.000 [L0.M1 ]: parent [0].dataType =  <PARENT>--> 
+schema_13.html:428 <!--### FG1.2.L#.M#.001 check [L0.M1 ]: parent.datatype in ( 'SCHEMA','PARENT','XMLCONTAINER')--> 
+schema_13.html:428 <!--### FG1.2.L#.M#.001.001 yes [L0.M1 ]: parent.datatype in ( 'SCHEMA','PARENT','XMLCONTAINER')--> 
+schema_13.html:428 <!--### FG1.2.L#.M#.001.002 [L0.M1 ]:  check rec.length ==  0,actual rec.length <1>--> 
+schema_13.html:428 <!--### FG1.2.L#.M#.001.002 [L0.M1 ]:  NO rec.length ==  0,actual rec.length <1>--> 
+schema_13.html:428 <!--### FG1.2.L#.M#.001.003 check  [L0.M1 ]:  NO recSch.length ==  0,actual recSch.length <1>--> 
+schema_13.html:428 <!--### FG1.2.L#.M#.001.003.002 NO   [L0.M1 ]:  NO recSch.length ==  0,actual recSch.length <1>--> 
+schema_13.html:428 <!--### start container--> 
+schema_13.html:420  USSAccordion0=new us.USSCreateAccordion(0) 
+schema_13.html:428 <!--### FG1.2.L#.M#.001.003.003 rec[0] parent[0].dataType == 'XMLCONTAINER', actual  PARENT--> 
+schema_13.html:420   USSTable=new us.USSCreateTable_(); 
+schema_13.html:420  USSAppendAccordionDflt0=new us.USSAccordionCreateDflt(0); 
+schema_13.html:420  USSAppendAccordionDflt0=new us.USSAppendAccordionHeader(USSAppendAccordionDflt0,'PARENT_rec_0',0,'0_0 '); 
+schema_13.html:428 <!--### recSch [0].dataType =  <XMLCONTAINER>--> 
+schema_13.html:420  USSAppendAccordionDflt0=new us.USSAccordionCreateDflt(0); 
+schema_13.html:420  USSAppendAccordionDflt0=new us.USSAppendAccordionHeader(USSAppendAccordionDflt0,'PARENT_rec_0',0,'0_0' ); 
+schema_13.html:428 <!--###  Call F:001: frameGeneration ..--> 
+schema_13.html:428 <!--###  #####in frameGeneration######--> 
+schema_13.html:428 <!--###  rec     :[object Object]--> 
+schema_13.html:428 <!--###  recSch  :[object Object],[object Object],[object Object]--> 
+schema_13.html:428 <!--###  parent  :[object Object]--> 
+schema_13.html:428 <!--###  level   :1--> 
+schema_13.html:428 <!--###  recSch.length = 3--> 
+schema_13.html:428 <!--###  rec.length    = 1--> 
+schema_13.html:428 <!--###  check schema in 'PARENT' , 'XMLCONTAINER' , 'SCHEMA' --> 
+schema_13.html:428 <!--### FG1.check parent.length == 0 , actual parent.length=<1>--> 
+schema_13.html:428 <!--### FG1.2. else parent.length == 0 , actual parent.length=<1>--> 
+schema_13.html:428 <!--### FG1.2.L#.M#.000 [L0.M1 ]: parent [0].dataType =  <XMLCONTAINER>--> 
+schema_13.html:428 <!--### FG1.2.L#.M#.001 check [L0.M1 ]: parent.datatype in ( 'SCHEMA','PARENT','XMLCONTAINER')--> 
+schema_13.html:428 <!--### FG1.2.L#.M#.001.001 yes [L0.M1 ]: parent.datatype in ( 'SCHEMA','PARENT','XMLCONTAINER')--> 
+schema_13.html:428 <!--### FG1.2.L#.M#.001.002 [L0.M1 ]:  check rec.length ==  0,actual rec.length <1>--> 
+schema_13.html:428 <!--### FG1.2.L#.M#.001.002 [L0.M1 ]:  NO rec.length ==  0,actual rec.length <1>--> 
+schema_13.html:428 <!--### FG1.2.L#.M#.001.003 check  [L0.M1 ]:  NO recSch.length ==  0,actual recSch.length <3>--> 
+schema_13.html:428 <!--### FG1.2.L#.M#.001.003.002 NO   [L0.M1 ]:  NO recSch.length ==  0,actual recSch.length <3>--> 
+schema_13.html:428 <!--### start container--> 
+schema_13.html:420  USSAccordion1=new us.USSCreateAccordion(1) 
+schema_13.html:428 <!--### FG1.2.L#.M#.001.003.003 rec[0] parent[0].dataType == 'XMLCONTAINER', actual  XMLCONTAINER--> 
+schema_13.html:420   USSTable=new us.USSCreateTable_(); 
+schema_13.html:420  USSAppendAccordionDflt1=new us.USSAccordionCreateDflt(1); 
+schema_13.html:420  USSAppendAccordionDflt1=new us.USSAppendAccordionHeader(USSAppendAccordionDflt1,'PersonalInfo_rec_0',1,'1_0 '); 
+schema_13.html:428 <!--### recSch [0].dataType =  <VARCHAR>--> 
+schema_13.html:428 <!--###  A:001 : Call frameField ..--> 
+schema_13.html:420  
+ USSTableRow = us.USSCreateTableRow_();	
+ USSField    = new us.USSField_(); 
+ USSField.group='uss';
+ USSField.name='name_1_0';
+ USSField.label='name';
+ USSField.task='NONE';
+ USSField.desc='';
+ USSField.htmlType='VARCHAR';
+ // func =Y >
+ USSField.entitle='NONREADONLY';
+ USSField.enttlname='';
+ USSField.mndf='N';
+ USSField.dataType='VARCHAR';
+ USSField.cclass='ctable';
+ USSField.validate='';
+ USSField.dflt='PersonalInfo_rec1';
+ USSField.min='0';
+ USSField.max='20';
+ USSField.tips='';
+ USSField.onkeyup='onKeyUp(this);';
+ USSField.onchange='onChange(this);';
+ USSField.onkeydown='onKeyDown(this);';
+ USSField.onkeypress='onKeyPress(this);';
+ USSField.onclick='onClick(this);';
+ USSField.listVal='||A|A-ADD|M|M-MODIFY|I|I-INQURY|C|C-CANCEL|V|V-VERIFY';
+ USSField.help='N';
+ USSField.helpLink='helpload';
+ USSField.xml='N';
+ USSField.Xpath='/';
+ USSTableRow=us.CreateField(USSField,USSTableRow);
+ USSTable=us.USSAppendTableRow(USSTableRow,USSTable); 
+schema_13.html:428 <!--### recSch [1].dataType =  <NUMBER>--> 
+schema_13.html:428 <!--###  A:001 : Call frameField ..--> 
+schema_13.html:420  
+ USSTableRow = us.USSCreateTableRow_();	
+ USSField    = new us.USSField_(); 
+ USSField.group='uss';
+ USSField.name='Age_1_0';
+ USSField.label='Age';
+ USSField.task='NONE';
+ USSField.desc='';
+ USSField.htmlType='VARCHAR';
+ // func =Y >
+ USSField.entitle='NONREADONLY';
+ USSField.enttlname='';
+ USSField.mndf='N';
+ USSField.dataType='NUMBER';
+ USSField.cclass='ctable';
+ USSField.validate='';
+ USSField.dflt='23';
+ USSField.min='1';
+ USSField.max='3';
+ USSField.tips='';
+ USSField.onkeyup='onKeyUp(this);';
+ USSField.onchange='onChange(this);';
+ USSField.onkeydown='onKeyDown(this);';
+ USSField.onkeypress='onKeyPress(this);';
+ USSField.onclick='onClick(this);';
+ USSField.listVal='||A|A-ADD|M|M-MODIFY|I|I-INQURY|C|C-CANCEL|V|V-VERIFY';
+ USSField.help='N';
+ USSField.helpLink='helpload';
+ USSField.xml='N';
+ USSField.Xpath='/';
+ USSTableRow=us.CreateField(USSField,USSTableRow);
+ USSTable=us.USSAppendTableRow(USSTableRow,USSTable); 
+schema_13.html:428 <!--### recSch [2].dataType =  <NUMBER>--> 
+schema_13.html:428 <!--###  A:001 : Call frameField ..--> 
+schema_13.html:420  
+ USSTableRow = us.USSCreateTableRow_();	
+ USSField    = new us.USSField_(); 
+ USSField.group='uss';
+ USSField.name='Mobile_1_0';
+ USSField.label='MobileNo';
+ USSField.task='NONE';
+ USSField.desc='';
+ USSField.htmlType='VARCHAR';
+ // func =Y >
+ USSField.entitle='NONREADONLY';
+ USSField.enttlname='';
+ USSField.mndf='N';
+ USSField.dataType='NUMBER';
+ USSField.cclass='ctable';
+ USSField.validate='';
+ USSField.dflt='8134662646';
+ USSField.min='1';
+ USSField.max='3';
+ USSField.tips='';
+ USSField.onkeyup='onKeyUp(this);';
+ USSField.onchange='onChange(this);';
+ USSField.onkeydown='onKeyDown(this);';
+ USSField.onkeypress='onKeyPress(this);';
+ USSField.onclick='onClick(this);';
+ USSField.listVal='||A|A-ADD|M|M-MODIFY|I|I-INQURY|C|C-CANCEL|V|V-VERIFY';
+ USSField.help='N';
+ USSField.helpLink='helpload';
+ USSField.xml='N';
+ USSField.Xpath='/';
+ USSTableRow=us.CreateField(USSField,USSTableRow);
+ USSTable=us.USSAppendTableRow(USSTableRow,USSTable); 
+schema_13.html:420  USSAppendAccordionDflt1=new us.USSAppendAccordionSection(USSAppendAccordionDflt1,USSTable,1,'1_0' ) ; 
+schema_13.html:420  USSAccordion1=new us.USSAppendAccordionDflt(USSAccordion1,USSAppendAccordionDflt1 ) ; 
+schema_13.html:428 <!--### end container--> 
+schema_13.html:420  
+ USSAccordion1=new us.USSCreateAccordion(1) 
+  USSTable=new us.USSCreateTable_(); 
+ USSAppendAccordionDflt1=new us.USSAccordionCreateDflt(1); 
+ USSAppendAccordionDflt1=new us.USSAppendAccordionHeader(USSAppendAccordionDflt1,'PersonalInfo_rec_0',1,'1_0 '); 
+ 
+ USSTableRow = us.USSCreateTableRow_();	
+ USSField    = new us.USSField_(); 
+ USSField.group='uss';
+ USSField.name='name_1_0';
+ USSField.label='name';
+ USSField.task='NONE';
+ USSField.desc='';
+ USSField.htmlType='VARCHAR';
+ // func =Y >
+ USSField.entitle='NONREADONLY';
+ USSField.enttlname='';
+ USSField.mndf='N';
+ USSField.dataType='VARCHAR';
+ USSField.cclass='ctable';
+ USSField.validate='';
+ USSField.dflt='PersonalInfo_rec1';
+ USSField.min='0';
+ USSField.max='20';
+ USSField.tips='';
+ USSField.onkeyup='onKeyUp(this);';
+ USSField.onchange='onChange(this);';
+ USSField.onkeydown='onKeyDown(this);';
+ USSField.onkeypress='onKeyPress(this);';
+ USSField.onclick='onClick(this);';
+ USSField.listVal='||A|A-ADD|M|M-MODIFY|I|I-INQURY|C|C-CANCEL|V|V-VERIFY';
+ USSField.help='N';
+ USSField.helpLink='helpload';
+ USSField.xml='N';
+ USSField.Xpath='/';
+ USSTableRow=us.CreateField(USSField,USSTableRow);
+ USSTable=us.USSAppendTableRow(USSTableRow,USSTable); 
+ 
+ USSTableRow = us.USSCreateTableRow_();	
+ USSField    = new us.USSField_(); 
+ USSField.group='uss';
+ USSField.name='Age_1_0';
+ USSField.label='Age';
+ USSField.task='NONE';
+ USSField.desc='';
+ USSField.htmlType='VARCHAR';
+ // func =Y >
+ USSField.entitle='NONREADONLY';
+ USSField.enttlname='';
+ USSField.mndf='N';
+ USSField.dataType='NUMBER';
+ USSField.cclass='ctable';
+ USSField.validate='';
+ USSField.dflt='23';
+ USSField.min='1';
+ USSField.max='3';
+ USSField.tips='';
+ USSField.onkeyup='onKeyUp(this);';
+ USSField.onchange='onChange(this);';
+ USSField.onkeydown='onKeyDown(this);';
+ USSField.onkeypress='onKeyPress(this);';
+ USSField.onclick='onClick(this);';
+ USSField.listVal='||A|A-ADD|M|M-MODIFY|I|I-INQURY|C|C-CANCEL|V|V-VERIFY';
+ USSField.help='N';
+ USSField.helpLink='helpload';
+ USSField.xml='N';
+ USSField.Xpath='/';
+ USSTableRow=us.CreateField(USSField,USSTableRow);
+ USSTable=us.USSAppendTableRow(USSTableRow,USSTable); 
+ 
+ USSTableRow = us.USSCreateTableRow_();	
+ USSField    = new us.USSField_(); 
+ USSField.group='uss';
+ USSField.name='Mobile_1_0';
+ USSField.label='MobileNo';
+ USSField.task='NONE';
+ USSField.desc='';
+ USSField.htmlType='VARCHAR';
+ // func =Y >
+ USSField.entitle='NONREADONLY';
+ USSField.enttlname='';
+ USSField.mndf='N';
+ USSField.dataType='NUMBER';
+ USSField.cclass='ctable';
+ USSField.validate='';
+ USSField.dflt='8134662646';
+ USSField.min='1';
+ USSField.max='3';
+ USSField.tips='';
+ USSField.onkeyup='onKeyUp(this);';
+ USSField.onchange='onChange(this);';
+ USSField.onkeydown='onKeyDown(this);';
+ USSField.onkeypress='onKeyPress(this);';
+ USSField.onclick='onClick(this);';
+ USSField.listVal='||A|A-ADD|M|M-MODIFY|I|I-INQURY|C|C-CANCEL|V|V-VERIFY';
+ USSField.help='N';
+ USSField.helpLink='helpload';
+ USSField.xml='N';
+ USSField.Xpath='/';
+ USSTableRow=us.CreateField(USSField,USSTableRow);
+ USSTable=us.USSAppendTableRow(USSTableRow,USSTable); 
+ USSAppendAccordionDflt1=new us.USSAppendAccordionSection(USSAppendAccordionDflt1,USSTable,1,'1_0' ) ; 
+ USSAccordion1=new us.USSAppendAccordionDflt(USSAccordion1,USSAppendAccordionDflt1 ) ;  
+schema_13.html:428 <!--###  Retuen F:002: frameGeneration ..--> 
+schema_13.html:420  USSAppendAccordionDflt0=new us.USSAppendAccordionSection(USSAppendAccordionDflt0,USSAccordion1,0,'0_0' ) ; 
+schema_13.html:420  USSAccordion0=new us.USSAppendAccordionDflt(USSAccordion0,USSAppendAccordionDflt0 ) ; 
+schema_13.html:428 <!--##

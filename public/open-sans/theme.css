@@ -1,0 +1,86 @@
+.adminlogin{
+	font-family: Open Sans;
+	font-weight: normal;
+	font-size: 10pt;
+	color: #ffffff;
+}
+
+.adminScreenLabels
+{
+	font-family: Open Sans;
+	font-weight: normal;
+	font-size: 10pt;
+	color: #616161;
+
+}
+
+.adminloginButton
+{
+
+	font-family: 'Open Sans';
+	font-weight: normal;
+	font-size: 10pt;
+	color: #3B74B0;
+}
+
+.adminScreenLinks
+{
+	font-family: 'Open Sans';
+	font-weight: normal;
+	font-size: 8pt;
+	color: #ffffff;
+
+}
+.labelCommon
+{
+	font-family: 'Open Sans';
+	font-weight: normal;
+	font-size: 9pt;
+	color: #515151;
+}
+
+.containerHead
+{
+	font-family: 'Open Sans';
+	font-weight: normal;
+	font-size: 9pt;
+	color: #d4d4d4;
+}
+
+.circleRed
+{
+	border-radius: 50%;
+	background-color: #d3564d;
+	width: 15px;
+	height: 15px;
+}
+
+
+.circleBlue
+{
+	border-radius: 50%;
+	background-color: #3B74B0;
+	width: 15px;
+	height: 15px;
+
+}
+
+
+
+.circleGreen
+{
+	border-radius: 50%;
+	background-color: #4e9414;
+	width: 15px;
+	height: 15px;
+
+}
+
+.circleOrange
+{
+	border-radius: 50%;
+	background-color: #FFA500;
+	width: 15px;
+	height: 15px;
+	
+}
